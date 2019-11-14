@@ -1,0 +1,35 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @img_url %>);">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+    <p><%= @category %> <br> <%= @iba %></p>
+  </div>
+</div>
+
+<div class="container d-flex mt-n5">
+
+  <div class="col-4 container border bg-white m-3 rounded ingredient-list">
+    <h2 class="mt-3">Ingredients list</h2>
+    <ul class="list-unstyled">
+    <% @cocktail.doses.each do |dose|  %>
+      <li><strong><%= dose.ingredient.name.capitalize %></strong> <small> - <em><%= dose.description.capitalize %></em> </small></li>
+    <% end %>
+    </ul>
+  </div>
+
+  <div class="col-4 container border rounded bg-white m-3 dose-form">
+    <h2 class="my-3">Propose Ingredients</h2>
+
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.association :ingredient, input_html: { class:"ingredient-select" } %>
+    <%= f.input :description %>
+    <%= f.submit class: "btn btn-primary m-3 rounded" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-9 align-self-center border rounded bg-white m-3">
+      <h2 class="mt-3">Recipe</h2>
+      <p class=""><%= @recipe %></p>
+  </div>
+</div>
