@@ -28,7 +28,7 @@ cocktail.save
 url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=mojito"
 cocktail_db_serialized = open(url).read
 cocktail_db = JSON.parse(cocktail_db_serialized)
-file = URI.open("https://www.thecocktaildb.com/images/media/drink/rxtqps1478251029.jpg")
+file = URI.open("https://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg")
 cocktail = Cocktail.new(name: cocktail_db['drinks'][0]['strDrink'])
 cocktail.photo.attach(io: file, filename: "mojito.jpg", content_type: 'image/jpg')
 cocktail.save

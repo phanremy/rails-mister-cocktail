@@ -5,9 +5,9 @@
 
     <%= link_to cocktail_path(cocktail) do %>
       <% if cocktail.photo.attached? %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>)">
+        <div data-aos="fade-up" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>)">
       <% else %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/phanremy/image/upload/v1573831744/cocktail_vyfoyx.jpg)">
+        <div data-aos="fade-up" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/phanremy/image/upload/v1573831744/cocktail_vyfoyx.jpg)">
       <% end %>
         <p style=""> <%= cocktail.name %> </p>
       </div>
