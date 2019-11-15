@@ -9,9 +9,14 @@
   </div>
 </div>
 
-<div class="container d-flex mt-n5">
+<div class="container mt-n5">
 
-  <div class="col-4 container border bg-white m-3 rounded ingredient-list">
+  <div class="col-12 col-md-6 align-self-center border rounded bg-white m-3">
+        <h2 class="mt-3">Recipe</h2>
+        <p class=""><%= @recipe %></p>
+  </div>
+
+  <div class="col-12 col-md-6 border bg-white m-3 rounded ingredient-list">
     <h2 class="mt-3">Ingredients list</h2>
     <ul class="list-unstyled">
     <% @cocktail.doses.each do |dose|  %>
@@ -20,7 +25,7 @@
     </ul>
   </div>
 
-  <div class="col-4 container border rounded bg-white m-3 dose-form">
+  <div class="col-12 col-md-6 border rounded bg-white m-3 dose-form">
     <h2 class="my-3">Propose Ingredients</h2>
 
     <%= simple_form_for [@cocktail, @dose] do |f| %>
@@ -29,11 +34,6 @@
     <%= f.submit class: "btn btn-primary m-3 rounded" %>
     <% end %>
   </div>
-</div>
 
-<div class="container">
-  <div class="col-9 align-self-center border rounded bg-white m-3">
-      <h2 class="mt-3">Recipe</h2>
-      <p class=""><%= @recipe %></p>
-  </div>
+
 </div>

@@ -5,7 +5,7 @@
   <% end %>
 
   <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-    <%= f.input :name, input_html: {value: "", class:"cocktail-select ml-1"} %>
+    <%= f.input :name, input_html: {value: "", class:"cocktail-select"} %>
     <%= f.submit "Search", class: "btn btn-primary ml-1" %>
   <% end %>
 
