@@ -5,7 +5,7 @@
   <% @cocktails.each do |cocktail| %>
 
     <%= link_to cocktail_path(cocktail) do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.img_url.ascii_only? ? cocktail.img_url : ""; %>)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.img_url.ascii_only? ? cocktail.img_url : "" %>)">
         <p style=""> <%= cocktail.name %> </p>
       </div>
     <% end %>
