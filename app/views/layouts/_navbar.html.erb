@@ -4,6 +4,11 @@
     <span>Cocktail-eo</span>
   <% end %>
 
+  <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%= f.input :name, input_html: {value: "", class:"cocktail-select ml-1"} %>
+    <%= f.submit "Search", class: "btn btn-primary ml-1" %>
+  <% end %>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
