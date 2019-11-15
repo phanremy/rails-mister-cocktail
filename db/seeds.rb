@@ -11,9 +11,8 @@ require 'open-uri'
   url2 = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
   cocktail_db_serialized2 = open(url2).read
   cocktail_db2 = JSON.parse(cocktail_db_serialized2)
-
-  cocktail_db2['drinks'].each do |drink|
-    Cocktail.create!(name: drink['strDrink'])
-  end
-
+  file = cocktail_db2['drinks'][0]['strDrinkThumb']
+  cocktail = Cocktail.new(name: cocktail_db2['drinks'][0]['strDrink'])
+  cocktail.photo.attach(io: file, filename: 'cocktail-image.jpg', content_type: 'image/jpg')
+  cocktail.save
 end
