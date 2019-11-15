@@ -5,6 +5,13 @@ class CocktailsController < ApplicationController
 
   def index
     @cocktails = Cocktail.all
+    @cocktails.each do |cocktail|
+      parse = cocktail.name.downcase
+      url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=#{parse}"
+      cocktail_db_serialized = open(url).read
+      cocktail_db = JSON.parse(cocktail_db_serialized)
+      cocktail.img_url = cocktail_db['drinks'][0]['strDrinkThumb']
+    end
   end
 
   def show
