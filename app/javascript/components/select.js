@@ -7,4 +7,4 @@ const initSelect2 = () => {
   $('.cocktail-select').select2();
 }
 
-export initSelect2;
+export { initSelect2 };
