@@ -7,12 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
+
+url2 = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+cocktail_db_serialized2 = open(url2).read
+cocktail_db2 = JSON.parse(cocktail_db_serialized2)
+
+cocktail_db2['drinks'].each do |ingredient|
+  Ingredient.create!(name: ingredient['strIngredient1'])
+end
+
 50.times do
   url2 = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
   cocktail_db_serialized2 = open(url2).read
   cocktail_db2 = JSON.parse(cocktail_db_serialized2)
   file = cocktail_db2['drinks'][0]['strDrinkThumb']
   cocktail = Cocktail.new(name: cocktail_db2['drinks'][0]['strDrink'])
-  cocktail.photo.attach(io: file, filename: 'cocktail-image.jpg', content_type: 'image/jpg')
+  cocktail.photo.attach(io: file, filename: 'drink-image.jpg', content_type: 'image/jpg')
   cocktail.save
 end
