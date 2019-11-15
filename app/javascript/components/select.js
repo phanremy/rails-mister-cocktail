@@ -6,3 +6,5 @@ const initSelect2 = () => {
   $('.ingredient-select').select2();
   $('.cocktail-select').select2();
 }
+
+export initSelect2;
