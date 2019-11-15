@@ -1,4 +1,8 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @img_url %>);">
+<% if @cocktail.photo.attached? %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @cocktail.photo.key, crop: :fill %>)">
+<% else %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/phanremy/image/upload/v1573831744/cocktail_vyfoyx.jpg)">
+<% end %>
   <div class="container">
     <h1><%= @cocktail.name %></h1>
     <p><%= @category %> <br> <%= @iba %></p>

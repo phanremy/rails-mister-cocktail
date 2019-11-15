@@ -12,16 +12,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Favorites", "#", class: "nav-link" %>
+        <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "My drinks", "#", class: "nav-link" %>
+        <%= link_to "Add", new_cocktail_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <%= image_tag "https://avatars3.githubusercontent.com/u/48187586?v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
+          <%= link_to "My Favorites", "#", class: "dropdown-item" %>
+          <%= link_to "My Reviews", "#", class: "dropdown-item" %>
         </div>
       </li>
     </ul>
